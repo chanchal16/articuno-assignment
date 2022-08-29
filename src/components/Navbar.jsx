@@ -1,39 +1,42 @@
-import React from 'react'
+import React from 'react';
+import {AiOutlineShoppingCart,AiOutlineUser} from 'react-icons/ai';
+import {HiOutlineSearch} from 'react-icons/hi';
+import {FaShopware} from 'react-icons/fa'
 
 export const Navbar = () => {
   return (
     <nav>
-        <div className="app-container displayFlex justifyBetween itemsCenter p1">
-            <a to="/" className="app-logo displayFlex itemsCenter">
-                <GiUbisoftSun className="mr1"/>
+        <div className="app-container flex justify-between items-center p1">
+            <a href="/" className="app-logo flex items-center">
+                <FaShopware size='1.5rem' className="mr-1.5"/>
                 <span className='text-yellow-500'>E-</span>Shop
             </a>
 
-            <ul className=" displayFlex listNoStyle gridGap4 itemsCenter">
+            <ul className=" flex list-none gap-10 items-center">
+                <li>Men</li>
+                <li>Women</li>
+                <li>Kids</li>
+            </ul>
+
+            <ul className=" flex list-none gap-5 items-center">
                 <li>
-                    <NavLink end to="/" className="displayFlex itemsCenter" title="Home">
-                        <AiOutlineHome />
-                    </NavLink>
+                    <a href='/' className="flex items-center">
+                        <HiOutlineSearch size='1.5rem' />
+                    </a>
                 </li>
 
                 <li>
-                    <NavLink end to="/leaderboard" className="displayFlex itemsCenter" title="View Leaderboard">
-                        <AiOutlineBarChart />
-                    </NavLink>
+                    <a href='/' className="flex items-center">
+                        <AiOutlineShoppingCart size='1.5rem' />
+                    </a>
                 </li>
 
                 <li>
-                    <NavLink end to={"/profile"} className="displayFlex itemsCenter" title="View Profile">
-                        <AiOutlineUser />
-                    </NavLink>
+                    <a href='/' className="flex items-center">
+                        <AiOutlineUser size='1.5rem' />
+                    </a>
                 </li>
-
-                <li>
-                    <button type="button" onClick={logout} className=" displayFlex itemsCenter bgTransparent borderNone" title="Logout">
-                        <AiOutlineLogout />
-                    </button>
-                </li>
-
+              
             </ul>
         </div>    
     </nav>
