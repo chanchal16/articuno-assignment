@@ -24,7 +24,7 @@ export const Form = () => {
             </div> 
             <div className='flex gap-8'>
                 <input type={'tel'} placeholder='Phone no' className='text-gray-300 py-2 px-4 border-2 rounded-full'/>
-                <button class="w-1/6 text-gray-400  py-2 px-4   border-2 rounded-full flex justify-between items-center">
+                <button class="w-full text-gray-400  py-2 px-4   border-2 rounded-full flex justify-between items-center">
                 <span class="mr-1">Poland</span>
                 <GrFormDown/>
                 </button>
