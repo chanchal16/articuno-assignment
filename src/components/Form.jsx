@@ -1,11 +1,24 @@
-import React from 'react';
+import React, {useEffect } from 'react';
 import {GrFormDown} from 'react-icons/gr'
 
-export const Form = () => {
+export const Form = ({userData,setUserData}) => {  
+    useEffect(() => {      
+        localStorage.setItem("user",JSON.stringify(userData))    
+    }, [userData])
+    
+    const loginHandler = ()=>{
+        setUserData(()=>({
+            name:'Guest',
+            email:'guest@gmail.com',
+            password:'pass@123'
+        }))
+    }
   return (
     <section className=''>
         <div className='flex gap-4 m-4 p-2'>
-            <button className='py-2 px-6 rounded-full bg-green-300 text-white'>LOG IN</button>
+            <button onClick={loginHandler} className='py-2 px-6 rounded-full bg-green-300 text-white'>
+                LOG IN
+            </button>
             <button className='py-2 px-6 rounded-full border border-green-300'>SIGN UP</button>
         </div>
         <p className='text-left text-lg text-gray-800 m-6'>Shipping Information</p>
