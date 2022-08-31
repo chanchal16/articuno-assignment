@@ -3,7 +3,7 @@ import {AiOutlineShoppingCart,AiOutlineUser} from 'react-icons/ai';
 import {HiOutlineSearch} from 'react-icons/hi';
 import {FaShopware} from 'react-icons/fa'
 
-export const Navbar = () => {
+export const Navbar = ({user}) => {
   return (
     <nav>
         <div className="app-container flex justify-between items-center p1">
@@ -27,13 +27,13 @@ export const Navbar = () => {
 
                 <li>
                     <a href='/' className="flex items-center">
-                        <AiOutlineShoppingCart size='1.5rem' />
+                       <AiOutlineShoppingCart size='1.5rem' />
                     </a>
                 </li>
 
                 <li>
                     <a href='/' className="flex items-center">
-                        <AiOutlineUser size='1.5rem' />
+                    {user?(  <>  <AiOutlineUser size='1.5rem' /><span className='text-xl'>{user.name[0]}</span></>):(<AiOutlineUser size='1.5rem' />)}
                     </a>
                 </li>
               
